@@ -8,6 +8,11 @@ placa = Arduino ('COM3')
 it = util.Iterator(placa)
 #inicio el iteratodr
 it.start()
+
+root=Tk()
+
+variable=StringVar()
+
 led1= placa.get_pin('d:8:o') 
 led2= placa.get_pin('d:9:o') 
 led3= placa.get_pin('d:10:o') 
@@ -33,8 +38,16 @@ def entrada(input):
     print(content)  
 
 def update():
-    
+    i=0
+    while 1:
+        i=i+1
+        variable.set(str(i))
+        root.update()
 
+label1=Label(root,textvariable=variable)
+label1.pack()
+boton=Button(marco1,text="ACTULIZAR",command=update)
+boton.place(x=130, y=50)
 
     
 Label(ventana, text="Input: ").place(x=20, y=60)
@@ -42,7 +55,6 @@ dato = Entry(ventana)
 dato.place(x=90, y=60)
 dato.bind('<Return>', entrada)
 
-boton=Button(marco1,text="ACTULIZAR",command=update)
-boton.place(x=130, y=50)
 
 ventana.mainloop()
+
