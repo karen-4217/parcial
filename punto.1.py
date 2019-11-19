@@ -3,8 +3,6 @@ from firebase_admin import credentials
 from firebase_admin import db
 from pyfirmata import Arduino, util
 from tkinter import *
-from PIL import Image
-from PIL import ImageTk
 import time
 
 
