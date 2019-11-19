@@ -19,7 +19,7 @@ ventana = Tk()
 ventana.geometry('850x850')
 ventana.configure(bg = 'white')
 ventana.title("punto 3")
-texto = Label(ventana, text="entry", bg='cadet blue1', font=("Arial Bold", 14), fg="white")
+texto = Label(ventana, text="entry", bg='pink', font=("Arial", 14), fg="white")
 texto.place(x=20, y=20)
 
 def entrada(input):
@@ -32,7 +32,13 @@ def entrada(input):
     
     print(content)  
 
+def save():
+    
+    
 def update():
+    
+    
+    
     
 
 
