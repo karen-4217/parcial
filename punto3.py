@@ -19,26 +19,20 @@ ventana = Tk()
 ventana.geometry('850x850')
 ventana.configure(bg = 'white')
 ventana.title("punto 3")
-texto = Label(ventana, text="entry", bg='pink', font=("Arial", 14), fg="white")
+texto = Label(ventana, text="entry", bg='cadet blue1', font=("Arial Bold", 14), fg="white")
 texto.place(x=20, y=20)
 
 def entrada(input):
     content = dato.get()
     dato.delete(0, END)
     if int(content)>= 8 and int(content)<= 13:
-        led6.write(1)
+        
         else
         print("ingresar un nuevo numero")
     
     print(content)  
 
-def save():
-    
-    
 def update():
-    
-    
-    
     
 
 
