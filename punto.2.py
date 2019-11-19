@@ -3,8 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import db
 from pyfirmata import Arduino, util
 from tkinter import *
-from PIL import Image
-from PIL import ImageTk
+
 import time
 
 
@@ -35,27 +34,27 @@ firebase_admin.initialize_app(cred, {
 
 
 
-marco1 = Frame(ventana, bg="cadet blue1", highlightthickness=1, width=1280, height=800, bd= 5)
+marco1 = Frame(ventana, bg="pink", highlightthickness=1, width=1280, height=800, bd= 5)
 marco1.place(x = 0,y = 0)
 
-frame1 = Frame(marco1, bg="cadet blue1", highlightthickness=1, width=500, height=500, bd= 5)
+frame1 = Frame(marco1, bg="pink", highlightthickness=1, width=500, height=500, bd= 5)
 frame1.place(x = 15,y = 15)
-texto = Label(ventana, text="SENSORES", bg='cadet blue1', font=("Arial Bold", 14), fg="white")
+texto = Label(ventana, text="SENSORES", bg='cadet blue1', font=("Arial", 12), fg="white")
 texto.place(x=110, y=20)
 
 
 
-label1= Label(frame1, bg='violet', font=("times", 15), fg="lightyellow4", width=5)
+label1= Label(frame1, bg='yellow', font=("times new roman", 14), fg="gray", width=5)
 info1=StringVar()
 label1.configure(textvariable=info1)
 label1.place(x=20,y=30)
 
-label2= Label(frame1, bg='violet', font=("times", 15), fg="lightyellow4", width=5)
+label2= Label(frame1, bg='yellow', font=("times new roman", 14), fg="gray", width=5)
 label2.place(x=20,y=70)
 info2=StringVar()
 label2.configure(textvariable=info2)
 
-label3= Label(frame1, bg='violet', font=("times", 15), fg="lightyellow4", width=5)
+label3= Label(frame1, bg='yellow', font=("times new roman", 14), fg="gray", width=5)
 label3.place(x=20,y=110)
 info3=StringVar()
 label3.configure(textvariable=info3)
@@ -85,9 +84,8 @@ def adc_read2():
 def adc_read3():
     
 
-    ref = db.reference('sensor')
+    ref = db.reference('sensor 3')
     x=ref.get()
-    
     i=x.get('sensor 3')
     print(i)
     led3.write(i)
@@ -95,13 +93,14 @@ def adc_read3():
        
 
 
-prom_15=Button(marco1,text="ADC1_UPDATE1",command=adc_read1)
-prom_15.place(x=130, y=50)
+save_button=Button(marco1,text="ADC1_UPDATE1",command=adc_read1)
+save_button.place(x=130, y=50)
 
-save_button=Button(marco1,text="ADC1_UPDATE2",command=adc_read2)
-save_button.place(x=130, y=90)
+save_button2=Button(marco1,text="ADC1_UPDATE2",command=adc_read2)
+save_button2.place(x=130, y=90)
 
-save_button=Button(marco1,text="ADC1_UPDATE3",command=adc_read3)
-save_button.place(x=130, y=130)    
+save_button3=Button(marco1,text="ADC1_UPDATE3",command=adc_read3)
+save_button3.place(x=130, y=130)    
     
 ventana.mainloop()
+
